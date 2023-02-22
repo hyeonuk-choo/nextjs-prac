@@ -1,17 +1,18 @@
 import React from "react";
-import Head from "next/head";
 import Nav from "./Nav";
+import Head from "next/head";
+import { Headinfo } from "./Headinfo";
 
 const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>My Blog</title>
-        <meta keyword="My Blog powered by Next.js"></meta>
-        <meta contents="My Blog powered by Next.js"></meta>
+        <title>My First Blog </title>
+        <meta></meta>
+        <meta></meta>
       </Head>
-      <div>{children}</div>
       <Nav />
+      <div>{children}</div>
     </>
   );
 };
