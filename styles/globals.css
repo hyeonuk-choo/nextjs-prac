@@ -1,0 +1,7 @@
+ul {
+  list-style: none;
+}
+
+body {
+  margin: 0; /* body태그는 기본 마진을 가진다*/
+}
