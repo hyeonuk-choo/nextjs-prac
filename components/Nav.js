@@ -14,22 +14,22 @@ const Nav = () => {
             <Link href="/photos">photos</Link>
           </li>
           <li>
-            <Link href="/sub">sub index</Link>
+            <Link href="/sub">sub&gt;index</Link>
           </li>
           <li>
-            <Link href="/sub/about">sub about</Link>
+            <Link href="/sub/about">sub&gt;about</Link>
           </li>
           <li>
-            <Link href="/sub/1">sub any</Link>
+            <Link href="/sub/1">sub&gt;any</Link>
           </li>
           <li>
-            <Link href="/sub/2">sub any</Link>
+            <Link href="/sub/2">sub&gt;any</Link>
           </li>
           <li>
-            <Link href="/sub/문자, 공백특수문자~!?도 되나?">sub any</Link>
+            <Link href="/sub/문자, 공백특수문자~!?도 되나?">sub&gt;any</Link>
           </li>
           <li>
-            <Link href="/sub/fetch">sub fetch</Link>
+            <Link href="/sub/fetch">sub&gt;fetch</Link>
           </li>
         </ul>
       </nav>
