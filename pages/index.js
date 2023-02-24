@@ -5,14 +5,14 @@ import styles from "@/styles/Home.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ posts }) {
-  console.log(posts);
+  // console.log(posts);
   return (
     <>
       <h1 className={styles.home}>
         here is My Webpage! Make yourself at home ^^
       </h1>
       <ul>
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
@@ -21,10 +21,14 @@ export default function Home({ posts }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:8080/api/posts");
-  const posts = await res.json();
-
-  return { props: { posts } };
+  // try, catch(e)문을 통한 예외처리
+  try {
+    const res = await fetch("http://localhost:8080/api/posts");
+    const posts = await res.json();
+    return { props: { posts } };
+  } catch (e) {
+    return { props: {} };
+  }
 };
 
 // export const getStaticProps = async () => {
