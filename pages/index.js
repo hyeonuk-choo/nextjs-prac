@@ -20,22 +20,24 @@ export default function Home({ posts }) {
   );
 }
 
-export const getServerSideProps = async () => {
+// export const getServerSideProps = async () => {
+//   // try, catch(e)문을 통한 예외처리
+//   try {
+//     const res = await fetch("http://localhost:8080/api/posts");
+//     const posts = await res.json();
+//     return { props: { posts } };
+//   } catch (e) {
+//     return { props: {} };
+//   }
+// };
+
+export const getStaticProps = async () => {
   // try, catch(e)문을 통한 예외처리
   try {
     const res = await fetch("http://localhost:8080/api/posts");
     const posts = await res.json();
-    return { props: { posts } };
+    return { props: { posts }, revalidate: 20 }; // getStaticProps 단점보완을 위해, revalidate 속성추가
   } catch (e) {
     return { props: {} };
   }
 };
-
-// export const getStaticProps = async () => {
-//   const res = await fetch(
-//     "https://jsonplaceholder.typicode.com/posts?_start=0&_end=10"
-//   );
-//   const posts = await res.json();
-
-//   return { props: { posts } };
-// };
